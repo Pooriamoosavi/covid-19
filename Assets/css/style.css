@@ -52,7 +52,7 @@
   margin-left: -15px;
 }
 
-#box::after {
+/*#box::after {
   content: " ";
 
   background: rgb(255, 255, 255);
@@ -67,7 +67,7 @@
   position: absolute;
   top: 130;
   left: 14;
-}
+}*/
 .absolute-center {
   position: absolute;
   margin-left: auto;
@@ -125,11 +125,4 @@
 .data {
   font-weight: 600;
   margin-left: 2rem;
-}
-
-@media screen and (max-with: 1400) {
-  #box::after {
-    content: "";
-    width: 91% !important;
-  }
 }
