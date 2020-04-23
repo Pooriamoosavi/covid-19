@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/Assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (max-width: 1400px)" href="/Assets/css/style.css" />
+    <script src="https://unpkg.com/eva-icons"></script>
+    <title>Covid-19 Tracker</title>
+  </head>
+  <body class="bg-light">
+    <div class="container-fluid d-flex flex-wrap justify-content-center">
+      <!--Top Bar-->
+      <div class="d-flex w-100 justify-content-between mt-5 ml-5 mr-5">
+        <div class="d-flex flex-wrap flex-column">
+          <span class="display-4">Covid-19 Tracker</span>
+          <span class="h3">For Net Engineering Course</span>
+        </div>
+        <div id="credit">
+          <img src="/Assets/img/Pouria.jpg" class="rounded-circle mt-1" />
+          <div class="d-flex flex-column">
+            <span class="h6 mt-2">By Pouria Mousavi</span>
+            <span class="font-weight-light">pouriaux@gmail.com</span>
+          </div>
+        </div>
+      </div>
+      <!--End Of Top Bar-->
+      <!--List Section-->
+      <div class="container-fluid d-flex flex-wrap row mt-5 pl-5 pr-5">
+        <% for(var j=0;j<data.length-1;j++){ %>
+        <div class="col-xl-3 col-lg-4 col-sm-6 mt-4">
+          <div id="box">
+            <div id="circle1" class="absolute-center"></div>
+            <div id="circle2" class="absolute-center"></div>
+            <div id="circle3" class="absolute-center"></div>
+            <img
+              id="flag"
+              src="https://www.countryflags.io/<%= data[j].country_code %>/flat/64.png"
+              class="absolute-center"
+            />
+            <img
+              class="blured"
+              src="https://www.countryflags.io/<%= data[j].country_code %>/flat/64.png"
+            />
+            <div
+              class="d-flex flex-wrap justify-content-center font-weight-extrabold h4 mt-4 absolute-center come-to-front"
+            >
+              <span><%= data[j].country %></span>
+            </div>
+            <ul
+              class="statistics d-flex flex-wrap flex-column justify-content-between"
+            >
+              <li class="w-100">
+                <div class="d-flex align-items-center">
+                  <i
+                    data-eva="people-outline"
+                    data-eva-fill="#999999"
+                    data-eva-animation="pulse"
+                  ></i>
+                  <span class="title">Population</span>
+                  <span class="data"><%= data[j].country_population %></span>
+                </div>
+              </li>
+              <li class="w-100 mt-1">
+                <div class="d-flex align-items-center">
+                  <i
+                    data-eva="checkmark-circle-outline"
+                    data-eva-fill="#ffe419"
+                    data-eva-animation="pulse"
+                  ></i>
+                  <span class="title">Confirmed Cases</span>
+                  <span class="data"><%= data[j].latest.confirmed %></span>
+                </div>
+              </li>
+              <li class="w-100 mt-1">
+                <div class="d-flex align-items-center">
+                  <i
+                    data-eva="alert-triangle-outline"
+                    data-eva-fill="#ff1952"
+                    data-eva-animation="pulse"
+                  ></i>
+                  <span class="title">Deaths</span>
+                  <span class="data"><%= data[j].latest.deaths %></span>
+                </div>
+              </li>
+              <li class="w-100 mt-1">
+                <div class="d-flex align-items-center">
+                  <i
+                    data-eva="smiling-face-outline"
+                    data-eva-fill="#19ffae"
+                    data-eva-animation="pulse"
+                  ></i>
+                  <span class="title">Recovered</span>
+                  <span class="data"><%= data[j].latest.recovered %></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+    <script>
+      eva.replace();
+    </script>
+  </body>
+</html>
