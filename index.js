@@ -12,8 +12,12 @@ app.get("/", function (reg, res) {
   });
 });
 
-app.listen(8080);
-console.log("App is running on 8080");
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8080;
+}
+app.listen(port);
+console.log("App Is Ready...");
 
 const getData = async () => {
   const api = "http://covid19api.xapix.io/v2/locations";
