@@ -28,7 +28,9 @@
           data-eva-animation="pulse"
         ></i>
         <span class="title">Population</span>
-        <span class="data"><%= data[j].country_population %></span>
+        <span class="data"
+          ><%= helpers.numberWithCommas(data[j].country_population) %></span
+        >
       </div>
     </li>
     <li class="w-100 mt-1">
@@ -39,7 +41,9 @@
           data-eva-animation="pulse"
         ></i>
         <span class="title">Confirmed Cases</span>
-        <span class="data"><%= data[j].latest.confirmed %></span>
+        <span class="data"
+          ><%= helpers.numberWithCommas(data[j].latest.confirmed) %></span
+        >
       </div>
     </li>
     <li class="w-100 mt-1">
@@ -50,7 +54,9 @@
           data-eva-animation="pulse"
         ></i>
         <span class="title">Deaths</span>
-        <span class="data"><%= data[j].latest.deaths %></span>
+        <span class="data"
+          ><%= helpers.numberWithCommas(data[j].latest.deaths) %></span
+        >
       </div>
     </li>
     <li class="w-100 mt-1">
@@ -61,7 +67,9 @@
           data-eva-animation="pulse"
         ></i>
         <span class="title">Recovered</span>
-        <span class="data"><%= data[j].latest.recovered %></span>
+        <span class="data"
+          ><%= helpers.numberWithCommas(data[j].latest.recovered )%></span
+        >
       </div>
     </li>
   </ul>
