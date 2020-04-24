@@ -1,0 +1,68 @@
+<div id="box">
+  <div id="circle1" class="absolute-center"></div>
+  <div id="circle2" class="absolute-center"></div>
+  <div id="circle3" class="absolute-center"></div>
+  <img
+    id="flag"
+    src="https://www.countryflags.io/<%= data[j].country_code %>/flat/64.png"
+    class="absolute-center"
+  />
+  <img
+    class="blured"
+    src="https://www.countryflags.io/<%= data[j].country_code %>/flat/64.png"
+  />
+  <div
+    class="d-flex flex-wrap justify-content-center font-weight-extrabold h4 mt-4 absolute-center come-to-front"
+  >
+    <% var title=helpers.titleGen(data[j].province,data[j].country) %>
+    <span><%= title %> </span>
+  </div>
+  <ul
+    class="statistics responsive-text d-flex flex-wrap flex-column justify-content-between"
+  >
+    <li class="w-100">
+      <div class="d-flex align-items-center">
+        <i
+          data-eva="people-outline"
+          data-eva-fill="#999999"
+          data-eva-animation="pulse"
+        ></i>
+        <span class="title">Population</span>
+        <span class="data"><%= data[j].country_population %></span>
+      </div>
+    </li>
+    <li class="w-100 mt-1">
+      <div class="d-flex align-items-center">
+        <i
+          data-eva="checkmark-circle-outline"
+          data-eva-fill="#ffe419"
+          data-eva-animation="pulse"
+        ></i>
+        <span class="title">Confirmed Cases</span>
+        <span class="data"><%= data[j].latest.confirmed %></span>
+      </div>
+    </li>
+    <li class="w-100 mt-1">
+      <div class="d-flex align-items-center">
+        <i
+          data-eva="alert-triangle-outline"
+          data-eva-fill="#ff1952"
+          data-eva-animation="pulse"
+        ></i>
+        <span class="title">Deaths</span>
+        <span class="data"><%= data[j].latest.deaths %></span>
+      </div>
+    </li>
+    <li class="w-100 mt-1">
+      <div class="d-flex align-items-center">
+        <i
+          data-eva="smiling-face-outline"
+          data-eva-fill="#19ffae"
+          data-eva-animation="pulse"
+        ></i>
+        <span class="title">Recovered</span>
+        <span class="data"><%= data[j].latest.recovered %></span>
+      </div>
+    </li>
+  </ul>
+</div>

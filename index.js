@@ -1,5 +1,6 @@
 const express = require("express");
 const axios = require("axios");
+const ejsHelpers = require("./views/functions.js");
 var app = express();
 
 app.set("view engine", "ejs");
@@ -8,7 +9,7 @@ app.use(express.static(__dirname));
 app.get("/", function (reg, res) {
   const data = getData();
   data.then((response) => {
-    res.render("index", { data: response.data.locations });
+    res.render("index", { data: response.data.locations, helpers: ejsHelpers });
   });
 });
 
